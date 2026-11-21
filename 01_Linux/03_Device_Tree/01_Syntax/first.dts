@@ -1,0 +1,11 @@
+/dts-v1/;
+ / {
+   model = "DTS Practice Board";
+  soc{
+uart0:serial{
+status = "okay";
+test-cells=<1 2 3>;
+test-bytes=[01 02 03];
+     };
+  };
+};

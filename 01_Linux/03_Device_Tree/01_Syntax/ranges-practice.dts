@@ -1,0 +1,22 @@
+/dts-v1/;
+
+/ {
+    #address-cells = <2>;
+    #size-cells = <1>;
+
+    soc {
+        #address-cells = <1>;
+        #size-cells = <2>;
+
+        ranges = <0x00001000
+                  0x00000001 0x40000000
+                  0x00000000 0x00010000>;
+
+        uart0: serial@1800 {
+            compatible = "practice,uart-v2",
+                         "practice,uart";
+            reg = <0x00001800 0x00000000 0x00000100>;
+            status = "okay";
+        };
+    };
+};

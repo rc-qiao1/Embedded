@@ -1,0 +1,16 @@
+/dts-v1/;
+
+/ {
+	compatible = "practice,board";
+
+	soc {
+		#address-cells = <0x01>;
+		#size-cells = <0x01>;
+
+		serial@40001000 {
+			compatible = "practice,uart";
+			reg = <0x40001000 0x1000>;
+			status = "okay";
+		};
+	};
+};

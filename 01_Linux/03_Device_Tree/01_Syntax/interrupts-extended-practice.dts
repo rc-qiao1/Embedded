@@ -1,0 +1,22 @@
+/dts-v1/;
+
+/ {
+    gic: interrupt-controller {
+        compatible = "practice,gic";
+        interrupt-controller;
+        #interrupt-cells = <3>;
+    };
+
+    gpio_intc: interrupt-controller-1 {
+        compatible = "practice,gpio-intc";
+        interrupt-controller;
+        #interrupt-cells = <2>;
+    };
+
+    device {
+        compatible = "practice,device";
+
+        interrupts-extended = <&gic 0 42 4>,
+                              <&gpio_intc 7 2>;
+    };
+};

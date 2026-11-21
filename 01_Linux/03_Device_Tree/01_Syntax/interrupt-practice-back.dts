@@ -1,0 +1,30 @@
+/dts-v1/;
+
+/ {
+	interrupt-parent = <0x01>;
+
+	interrupt-controller {
+		compatible = "practice,gic";
+		interrupt-controller;
+		#interrupt-cells = <0x03>;
+		phandle = <0x01>;
+	};
+
+	soc {
+		interrupt-parent = <0x02>;
+
+		interrupt-controller {
+			compatible = "practice,vic";
+			interrupt-controller;
+			#interrupt-cells = <0x02>;
+			phandle = <0x02>;
+		};
+
+		serial@40001000 {
+			interrupt-parent = <0x01>;
+			compatible = "practice,uart";
+			interrupts = <0x05 0x04>;
+			status = "okay";
+		};
+	};
+};
