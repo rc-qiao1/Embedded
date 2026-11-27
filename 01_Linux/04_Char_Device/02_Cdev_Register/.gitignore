@@ -1,0 +1,13 @@
+# Kernel module build artifacts
+*.o
+*.ko
+*.mod
+*.mod.c
+*.cmd
+*.symvers
+modules.order
+Module.symvers
+
+# Test executables
+test_nonblock
+test_poll
